@@ -1,0 +1,88 @@
+/**********/
+/* layout */
+/**********/
+
+body, body *{color:#444;font-size:13px;line-height:16px;margin:0;outline:0;padding:0} /* reset ALL the things */
+button::-moz-focus-inner,input[type=submit]::-moz-focus-inner{border:0;padding:0} /* we are probably styling the buttons so kill the extra padding and border */
+body,div,footer,header,menu,nav,section{display:block} /* go go HTML5 and do not forget the shiv */
+a{text-decoration:none} /* add decoration later */
+a img{border:none} /* just in case */
+p,ul{margin-bottom:16px} /* put some space between text paragraphs */
+menu{list-style:none} /* we probably do not want styled menus...probably */
+
+/* based on 940px wide grid but theres no limits and everything will float nicely */
+.row{margin-left:-20px}
+[class^=col-]{float:left;margin-left:20px} /* use attribute selector to cut down on CSS selector size */
+
+/* add whatever columns you need, do not forget to account for the 20px margin */
+.col-1{width:100px}
+.col-2{width:220px}
+.col-3{width:340px}
+.col-4{width:460px}
+.col-6{width:700px}
+
+.indent-2{padding-left:240px} /* same width as col-2 plus a margin */
+
+/*********/
+/* magik */
+/*********/
+
+h1 span{display:block;height:0;overflow:hidden} /* text hider */
+.row:after{clear:both;content:"\0020";display:block;height:0;overflow:hidden} /* clearfix, i hate putting extra classes on things */
+hr{border:none;clear:both;display:block;font-size:1px;line-height:0;overflow:visible;position:relative;text-align:left;width:100%} /* general hr reset */
+
+hr.dotted{border-top:1px dotted} /* style the resetted hr */
+
+/* animate the anchors, do crazy things with the navigation though that you do not want to do with the paragraph anchors */
+nav a{-webkit-transition:all .25s ease-out;-moz-transition:all .25s ease-out;-o-transition:all .25s ease-out;transition:all .25s ease-out}
+p a{-webkit-transition:color .25s ease-out;-moz-transition:color .25s ease-out;-o-transition:color .25s ease-out;transition:color .25s ease-out}
+
+/* gradients go here */
+
+/**************/
+/* appearance */
+/**************/
+
+/* main styles go here */
+
+/* logo as background of h1, company name as h1 anchor text, wrapped in a span to hide as above */
+h1 a{background:url(/newimages/logo.png);display:block;height:50px;width:150px}
+
+/***********/
+/* fontage */
+/***********/
+
+/* font families and colors go here */
+
+body,body *{font-family:arial}
+
+hr.dotted{color:#00f}
+
+/***********/
+/* plugins */
+/***********/
+
+/* plugin css goes here */
+
+/* css you add to change plugins goes here, by the power of cascadation */
+
+/*********/
+/* print */
+/*********/
+
+/* borrowed from html5boilerplate.com */
+
+@media print {
+*{background:transparent !important;color:black !important;text-shadow:none !important;filter:none !important;-ms-filter: none !important}
+a,a:visited{text-decoration:underline}
+a[href]:after{content:" (" attr(href) ")";}
+abbr[title]:after{content:" (" attr(title) ")";}
+a[href^=javascript:]:after,a[href^=#]:after{content:"";}
+pre,blockquote{border:1px solid #999;page-break-inside:avoid}
+thead{display:table-header-group} 
+tr,img{page-break-inside:avoid}
+img{max-width:100% !important}
+@page{margin:0.5cm}
+p,h2,h3{orphans:3;widows:3}
+h2,h3{page-break-after:avoid}
+}
